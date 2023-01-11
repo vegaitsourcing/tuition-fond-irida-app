@@ -16,8 +16,6 @@ export const BlogsSection = () => {
         });
     }, [currentPage]);
 
-    const handleClickCard = () => {};
-
     const handleClickPaginationButton = (newPageNumber: number) => {
         setCurrentPage(newPageNumber);
     };
@@ -26,8 +24,8 @@ export const BlogsSection = () => {
         <>
             <StyledBlogsSection>
                 <div className="blog-cards-wrapper">
-                    {pageOfBlogs.items.map((blog: Blog, index: number) => (
-                        <BlogCard blog={blog} key={index} />
+                    {pageOfBlogs.items.map((blog: Blog) => (
+                        <BlogCard blog={blog} key={blog.id}/>
                     ))}
                 </div>
             </StyledBlogsSection>
